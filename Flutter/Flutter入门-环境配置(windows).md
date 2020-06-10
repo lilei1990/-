@@ -18,9 +18,13 @@
       - 输入项目名称 (如 myapp), 然后点击 Next
       - 点击 Finish
       - 等待Android Studio安装SDK并创建项目.
+      - 记得配置环境变量flutter的sdk目录下的bin文件夹
 
-        ` 如果第一次创建项目需要下载SDK,会超级慢,可以参考镜像自己`
-        [手动下载](https://mirrors.tuna.tsinghua.edu.cn/flutter/flutter_infra/releases/stable/)`创建项目的时候会下载一些库卡死,或者配置下面环境变量镜像`
+        ![flutter_info](images/flutter_info.png)
+
+      **问题1:**  
+       ` 如果第一次创建项目需要下载SDK,会超级慢,可以参考镜像自己`
+      [手动下载](https://mirrors.tuna.tsinghua.edu.cn/flutter/flutter_infra/releases/stable/)`创建项目的时候会下载一些库卡死,或者配置下面环境变量镜像`
 
             //环境变量
             PUB_HOSTED_URL=https://pub.flutter-io.cn
@@ -31,5 +35,11 @@
             //克隆sdk
             git clone -b dev https://github.com/flutter/flutter.git
 
-           `所有工作准备就绪,运行到Android模拟器,是不是发现没反应过一会报错,这是因为有依赖库下载不下来,自己用androidStudio打开flutter项目中的Android项目,等待构建完成就好了
-           网上说是因为仓库访问不了的问题,需要换成阿里的仓库,我个人感觉不是,因为下载不下来的依赖库,通过别的方式是可以下载的,不过这个不重要`
+       ** 问题2:**  
+      ` Running Gradle task 'assembleDebug'...
+       所有工作准备就绪,运行到Android模拟器,是不是发现没反应过一会报错,这是因为有依赖库下载不下来,自己用androidStudio打开flutter项目中的Android项目,等待构建完成就好了
+       网上说是因为仓库访问不了的问题,需要换成阿里的仓库,我个人感觉不是,因为下载不下来的依赖库,通过别的方式是可以下载的,不过这个不重要`
+
+       ** 问题3:**  
+       ` Error connecting to the service protocol: failed to connect to http://127.0.0.1:57882/JpEfnldKVSo=/
+       `
