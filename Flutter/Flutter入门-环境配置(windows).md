@@ -35,13 +35,13 @@
             //克隆sdk
             git clone -b dev https://github.com/flutter/flutter.git
 
-       ** 问题2:**
+      **问题2:**
 
             Running Gradle task 'assembleDebug'...
            所有工作准备就绪,运行到Android模拟器,是不是发现没反应过一会报错,这是因为有依赖库下载不下来,自己用androidStudio打开flutter项目中的Android项目,等待构建完成就好了
            网上说是因为仓库访问不了的问题,需要换成阿里的仓库,我个人感觉不是,因为下载不下来的依赖库,通过别的方式是可以下载的,不过这个不重要   
 
-       ** 问题3:**
+      **问题3:**
 
             Error connecting to the service protocol: failed to connect to http://127.0.0.1:57882/JpEfnldKVSo=/
             //检查环境是否全部正常
@@ -50,3 +50,6 @@
             [ERROR:flutter/shell/gpu/gpu_surface_gl.cc(58)] Failed to setup Skia Gr context.
             //修复 
             flutter run --enable-software-rendering       
+
+        或者直接配置启动参数  
+        ![image_run](images/image_run.png)
