@@ -19,6 +19,13 @@
       - 点击 Finish
       - 等待Android Studio安装SDK并创建项目.
 
+        ` 如果第一次创建项目需要下载SDK,会超级慢,可以参考镜像自己`
+        [手动下载](https://mirrors.tuna.tsinghua.edu.cn/flutter/flutter_infra/releases/stable/)`创建项目的时候会下载一些库卡死,或者配置下面环境变量镜像`
 
-        `    如果第一次创建项目需要下载SDK,会超级慢,可以参考镜像自己 [手动下载](https://mirrors.tuna.tsinghua.edu.cn/flutter/flutter_infra/releases/stable/)
-        `
+            //环境变量
+            PUB_HOSTED_URL=https://pub.flutter-io.cn
+            FLUTTER_STORAGE_BASE_URL=https://storage.flutter-io.cn
+            //克隆sdk
+            git clone -b dev https://github.com/flutter/flutter.git
+
+
