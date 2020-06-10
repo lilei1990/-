@@ -25,7 +25,11 @@
             //环境变量
             PUB_HOSTED_URL=https://pub.flutter-io.cn
             FLUTTER_STORAGE_BASE_URL=https://storage.flutter-io.cn
+            //上海交通大学Linux用户组
+            FLUTTER_STORAGE_BASE_URL：https : //mirrors.sjtug.sjtu.edu.cn/
+            PUB_HOSTED_URL：https：//dart-pub.mirrors.sjtug.sjtu.edu.cn/
             //克隆sdk
             git clone -b dev https://github.com/flutter/flutter.git
 
-
+           `所有工作准备就绪,运行到Android模拟器,是不是发现没反应过一会报错,这是因为有依赖库下载不下来,自己用androidStudio打开flutter项目中的Android项目,等待构建完成就好了
+           网上说是因为仓库访问不了的问题,需要换成阿里的仓库,我个人感觉不是,因为下载不下来的依赖库,通过别的方式是可以下载的,不过这个不重要`
