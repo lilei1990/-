@@ -1,6 +1,6 @@
 # Flutter 入门
 
-- Android Studio 安装
+- 创建第一个程序
   - **替换 lib/main.dart.**
 
             import 'package:flutter/material.dart';
@@ -69,4 +69,6 @@
                 );
               }
             }
+
+    - 添加一个 有状态的部件（Stateful widget）
 
