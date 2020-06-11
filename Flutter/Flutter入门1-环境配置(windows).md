@@ -22,6 +22,10 @@
 
         ![flutter_info](images/flutter_info.png)
 
+    - **体验热重载**
+      - AndroidStudio直接ctrl+s保存代码自动热更新,或者点击闪电图标
+      - 命令flutter run运行的,可以在命令提示界面按R键
+
       **问题1:**  
        ` 如果第一次创建项目需要下载SDK,会超级慢,可以参考镜像自己`
       [手动下载](https://mirrors.tuna.tsinghua.edu.cn/flutter/flutter_infra/releases/stable/)`创建项目的时候会下载一些库卡死,或者配置下面环境变量镜像`
