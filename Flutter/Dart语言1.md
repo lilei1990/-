@@ -92,3 +92,121 @@
         }
         //调用函数时，可以使用指定命名参数。例如：paramName: value
         enableFlags(bold: true, hidden: false);
+
+- 3.异步支持
+  - Future
+    - Future与JavaScript中的Promise非常相似，表示一个异步操作的最终完成（或失败）及其结果值的表示
+    - 一个Future只会对应一个结果，要么成功，要么失败
+    - Future 的所有API的返回值仍然是一个Future对象
+  - Future.then
+
+        Future.delayed(new Duration(seconds: 2),(){
+           return "hi world!";
+        }).then((data){
+           print(data);
+        });
+  - Future.catchError
+
+        Future.delayed(new Duration(seconds: 2),(){
+           //return "hi world!";
+           throw AssertionError("Error");  
+        }).then((data){
+           //执行成功会走到这里  
+           print("success");
+        }).catchError((e){
+           //执行失败会走到这里  
+           print(e);
+        });
+    - onError
+
+            Future.delayed(new Duration(seconds: 2), () {
+                //return "hi world!";
+                throw AssertionError("Error");
+            }).then((data) {
+                print("success");
+            }, onError: (e) {
+                print(e);
+            });
+  - Future.whenComplete
+
+        Future.delayed(new Duration(seconds: 2),(){
+           //return "hi world!";
+           throw AssertionError("Error");
+        }).then((data){
+           //执行成功会走到这里 
+           print(data);
+        }).catchError((e){
+           //执行失败会走到这里   
+           print(e);
+        }).whenComplete((){
+           //无论成功或失败都会走到这里
+        });
+  - Future.wait
+    - 只有数组中所有Future都执行成功后，才会触发then的成功回调，只要有一个Future执行失败，就会触发错误回调
+
+           Future.wait([
+            // 2秒后返回结果  
+            Future.delayed(new Duration(seconds: 2), () {
+              return "hello";
+            }),
+            // 4秒后返回结果  
+            Future.delayed(new Duration(seconds: 4), () {
+              return " world";
+            })
+          ]).then((results){
+            print(results[0]+results[1]);
+          }).catchError((e){
+            print(e);
+          });
+  - Async/await
+    - Dart中的async/await 和JavaScript中的async/await功能和用法是一模一样的，如果你已经了解JavaScript中的async/await的用法
+    - 回调地狱(Callback Hell)
+      - 使用Future消除Callback Hell
+
+            login("alice","******").then((id){
+                  return getUserInfo(id);
+            }).then((userInfo){
+                return saveUserInfo(userInfo);
+            }).then((e){
+               //执行接下来的操作 
+            }).catchError((e){
+              //错误处理  
+              print(e);
+            });
+      - 使用async/await消除callback hell
+
+            task() async {
+               try{
+                String id = await login("alice","******");
+                String userInfo = await getUserInfo(id);
+                await saveUserInfo(userInfo);
+                //执行接下来的操作   
+               } catch(e){
+                //错误处理   
+                print(e);   
+               }  
+            }
+
+- 4.Stream
+  - 接收多个异步操作的结果（成功或失败）
+
+        Stream.fromFutures([
+          // 1秒后返回结果
+          Future.delayed(new Duration(seconds: 1), () {
+            return "hello 1";
+          }),
+          // 抛出一个异常
+          Future.delayed(new Duration(seconds: 2),(){
+            throw AssertionError("Error");
+          }),
+          // 3秒后返回结果
+          Future.delayed(new Duration(seconds: 3), () {
+            return "hello 3";
+          })
+        ]).listen((data){
+           print(data);
+        }, onError: (e){
+           print(e.message);
+        },onDone: (){
+        
+        });
