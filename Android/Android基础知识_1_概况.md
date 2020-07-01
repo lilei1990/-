@@ -1,4 +1,9 @@
-**五种布局**
+##### Android开发的四大组件
+- Activity
+- Service
+- ContentProvider
+- BroadcastReceive
+##### **五种布局**
 
 全都继承自ViewGroup，各自特点及绘制效率对比。
 
@@ -46,4 +51,3 @@
 > 它的出现主要是为了解决布局嵌套过多的问题，以灵活的方式定位和调整小部件。
 > 从 Android Studio 2.3 起，官方的模板默认使用 ConstraintLayout
 
-**Activity生命周期。**
