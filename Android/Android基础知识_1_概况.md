@@ -3,6 +3,47 @@
 - Service
 - ContentProvider
 - BroadcastReceive
+
+##### startService 和 bindService 特点
+- 启动方式：Context.startService
+
+- 启动方式：Context.bindService 
+
+- 停止方式：Context.stopService 或者 Service.stopSelf
+
+- 停止方式：Context.unbindService
+
+- 多次启动只会多次执行 onStartCommand 方法，只要调用一次 stopService 服务就会销毁
+
+- 多次启动 onBind  一般只执行一次（特殊情况可以多次执行），当所有绑定者都与service 解绑时，service 会自行销毁，其中单独某一个绑定者解绑，service 不会销毁
+
+- 生命周期：onCreate --> onStartCommand --> onDestory
+
+- 生命周期：onCreate --> onBind--> onUnbind--> onDestory
+
+- 服务启动后执行单一的操作并且不会向调用者返回结果，无法通信
+
+- 服务启动后允许组件与服务进行交互、发送请求、获取结果，甚至是利用进程间通信 (IPC) 跨进程执行这些操作
+
+- 调用者退出后，Service 仍然存在
+
+- 调用者退出后，Service（只有一个绑定者时） 随着调用者销毁
+
+- 启动一次服务，多次调用 stopService 只有第一次有效，不会抛出异常
+
+- 启动一次服务，多次调用 unbindService 会抛出异常（IllegalArgumentException：Service not registered）
+注意：
+
+>不论哪种方式启动服务，onCreate 只会执行一次，只有当服务销毁（onDestory）后再次启动服务时，又会重新调用 onCreate
+
+>Service与Activity一样都存在于当前进程的主线程，所以，一些阻塞UI的操作，比如耗时操作不能放在service里进行
+
+>bindService 启动服务，绑定者在销毁（onDestory）前需要先解绑，
+否则出 *** has leaked ServiceConnection 等错误日志，
+意思就是服务连接泄露（因为在关闭Acitivity的时候没有释放链接），
+这个错误就好像我们启动了一个对话框，此时我们没有关闭对话框，
+如果直接关闭了启动对话框的Activity，也会出现类似的错误，
+这个时候我们只需要在Acitivity销毁时释放链接就可以了
 ##### **五种布局**
 
 全都继承自ViewGroup，各自特点及绘制效率对比。
