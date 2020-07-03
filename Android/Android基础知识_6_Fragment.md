@@ -18,7 +18,7 @@
 
 因为Fragment是依附于Activity存在的，因此它的生命周期收到Activity的生命周期影响
 
-![](http://upload-images.jianshu.io/upload_images/1780352-f8584bc70f3c149c.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240)
+![](images/.Android基础知识_6_Fragment_images/c1aa57cb.png)
 
 Fragment比Activity多了几个生命周期的回调方法
 
@@ -103,7 +103,7 @@ Activity对应的布局文件
 
 运行效果图
 
-![](http://upload-images.jianshu.io/upload_images/1780352-bd36369dc712c754.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240)
+![](images/.Android基础知识_6_Fragment_images/7c2d3685.png)
 
 **动态使用Fragment**
 
@@ -257,19 +257,6 @@ public class MainActivity extends AppCompatActivity {
 }
 ```
 
-**显示效果**
-
-默认显示
-
-![](http://upload-images.jianshu.io/upload_images/1780352-03b001ae2419fc28.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240)
-
-点击BLUE按钮时
-
-![](http://upload-images.jianshu.io/upload_images/1780352-f8889a725e75253f.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240)
-
-点击RED按钮时
-
-![](http://upload-images.jianshu.io/upload_images/1780352-5a447a4ea3bdbb5e.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240)
 
 以上代码我写的比较臃肿但是比较容易看明白：
 
