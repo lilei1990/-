@@ -49,15 +49,15 @@ public class Activity extends android.app.Activity {
 
 **消息机制的运行流程：**在子线程执行完耗时操作，当Handler发送消息时，将会调用`MessageQueue.enqueueMessage`，向消息队列中添加消息。当通过`Looper.loop`开启循环后，会不断地从线程池中读取消息，即调用`MessageQueue.next`，然后调用目标Handler（即发送该消息的Handler）的`dispatchMessage`方法传递消息，然后返回到Handler所在线程，目标Handler收到消息，调用`handleMessage`方法，接收消息，处理消息。
 
-![](images/.Android基础知识_7_消息机制(Handler)_images/3efc9d91.png)
+![](images/Android_7_Handler_images/3efc9d91.png)
 
 **MessageQueue，Handler和Looper三者之间的关系：**每个线程中只能存在一个Looper，Looper是保存在ThreadLocal中的。主线程（UI线程）已经创建了一个Looper，所以在主线程中不需要再创建Looper，但是在其他线程中需要创建Looper。每个线程中可以有多个Handler，即一个Looper可以处理来自多个Handler的消息。 Looper中维护一个MessageQueue，来维护消息队列，消息队列中的Message可以来自不同的Handler。
 
-![](images/.Android基础知识_7_消息机制(Handler)_images/ef24fd6f.png)
+![](images/Android_7_Handler_images/ef24fd6f.png)
 
 下面是消息机制的整体架构图，接下来我们将慢慢解剖整个架构。
 
-![](images/.Android基础知识_7_消息机制(Handler)_images/57982cde.png)
+![](images/Android_7_Handler_images/57982cde.png)
 
 从中我们可以看出：  
 Looper有一个MessageQueue消息队列；  
@@ -435,4 +435,4 @@ Handler的默认方法：`Handler.handleMessage(msg)`，优先级最低。
 
 以上便是消息机制的原理，以及从源码角度来解析消息机制的运行过程。可以简单地用下图来理解。
 
-![](images/.Android基础知识_7_消息机制(Handler)_images/e28aff9c.png)
+![](images/Android_7_Handler_images/e28aff9c.png)

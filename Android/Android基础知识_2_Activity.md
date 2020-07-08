@@ -15,7 +15,7 @@
 > Activity退居后台内存不足：   onCreate()—>onStart()—>onResume()，Activity进入运行状态。
 
 
-  ![](images/.Android基础知识_images/b646144f.png)
+  ![](images/Android_2_Activity_images/b646144f.png)
   
 **Activity启动方式。**
 
@@ -109,4 +109,4 @@
 
 **Activity和Fragment的生命周期**
 
-![](images/.Android基础知识_images/63e90972.png)
+![](images/Android_2_Activity_images/63e90972.png)

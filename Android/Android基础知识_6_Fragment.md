@@ -18,7 +18,7 @@
 
 因为Fragment是依附于Activity存在的，因此它的生命周期收到Activity的生命周期影响
 
-![](images/.Android基础知识_6_Fragment_images/c1aa57cb.png)
+![](images/Android_6_Fragment_images/c1aa57cb.png)
 
 Fragment比Activity多了几个生命周期的回调方法
 
@@ -103,7 +103,7 @@ Activity对应的布局文件
 
 运行效果图
 
-![](images/.Android基础知识_6_Fragment_images/7c2d3685.png)
+![](images/Android_6_Fragment_images/7c2d3685.png)
 
 **动态使用Fragment**
 

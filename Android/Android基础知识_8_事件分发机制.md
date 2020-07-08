@@ -18,7 +18,7 @@
 - 事件列：从手指接触屏幕至手指离开屏幕，这个过程产生的一系列事件
   任何事件列都是以DOWN事件开始，UP事件结束，中间有无数的MOVE事件，如下图：
 
-![](images/.Android基础知识_8_事件分发机制_images/9ba5eb04.png)
+![](images/Android_8_ev_images/9ba5eb04.png)
 
 即当一个MotionEvent 产生后，系统需要把这个事件传递给一个具体的 View 去处理, 
 
@@ -36,7 +36,7 @@
 
 - Android的UI界面是由Activity、ViewGroup、View及其派生类组合而成的
 
-![](images/.Android基础知识_8_事件分发机制_images/cc2e2cce.png)
+![](images/Android_8_ev_images/cc2e2cce.png)
 
 - View是所有UI组件的基类
 
@@ -52,7 +52,7 @@
 
 **答：dispatchTouchEvent() 、onInterceptTouchEvent()和onTouchEvent()**
 
-![](images/.Android基础知识_8_事件分发机制_images/4d898641.png)
+![](images/Android_8_ev_images/4d898641.png)
 
 > 下文会对这3个方法进行详细介绍
 
@@ -74,7 +74,7 @@
 
 - 事件分发过程由dispatchTouchEvent() 、onInterceptTouchEvent()和onTouchEvent()三个方法协助完成，如下图：
 
-![](images/.Android基础知识_8_事件分发机制_images/789ad3e2.png)
+![](images/Android_8_ev_images/789ad3e2.png)
 
 方法详细介绍
 
@@ -82,7 +82,7 @@
 
   > Android事件分发顺序：**Activity（Window） -> ViewGroup -> View**
 
-![](images/.Android基础知识_8_事件分发机制_images/0c87ddb1.png)
+![](images/Android_8_ev_images/0c87ddb1.png)
 其中：
 
 - super：调用父类方法
@@ -117,7 +117,7 @@
 - 后续事件（Move、Up）会继续分发到该View
 - 流程图如下：
 
-![](images/.Android基础知识_8_事件分发机制_images/1a8c5b50.png)
+![](images/Android_8_ev_images/1a8c5b50.png)
 
 **3. 返回false**
 
@@ -133,7 +133,7 @@
 
 - 流程图如下：
 
-![](images/.Android基础知识_8_事件分发机制_images/1a8c5b50.png)
+![](images/Android_8_ev_images/1a8c5b50.png)
 
 ### 2.2 onTouchEvent()
 
@@ -156,7 +156,7 @@
 
 - 流程图如下：
 
-![](images/.Android基础知识_8_事件分发机制_images/1a8c5b50.png)
+![](images/Android_8_ev_images/1a8c5b50.png)
 
 **2. 返回false（同默认实现：调用父类onTouchEvent()）**
 
@@ -230,7 +230,7 @@ public boolean dispatchTouchEvent(MotionEvent ev) {
 
 我们将要讨论的布局层次如下：
 
-![](images/.Android基础知识_8_事件分发机制_images/196cbfd5.png)
+![](images/Android_8_ev_images/196cbfd5.png)
 - 最外层：Activiy A，包含两个子View：ViewGroup B、View C
 - 中间层：ViewGroup B，包含一个子View：View C
 - 最内层：View C

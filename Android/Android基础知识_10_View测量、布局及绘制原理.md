@@ -1,10 +1,10 @@
 ## 一、View绘制的流程框架
 
-![](images/.Android基础知识_10_View测量、布局及绘制原理_images/0ee142d8.png)
+![](images/Android_10_View_images/0ee142d8.png)
 
 View的绘制是从上往下一层层迭代下来的。DecorView-->ViewGroup（--->ViewGroup）-->View ，按照这个流程从上往下，依次measure(测量),layout(布局),draw(绘制)。
 
-![](images/.Android基础知识_10_View测量、布局及绘制原理_images/97ad9bc1.png)
+![](images/Android_10_View_images/97ad9bc1.png)
 
 ## 二、Measure流程
 
@@ -34,7 +34,7 @@ protected void onMeasure(int widthMeasureSpec, int heightMeasureSpec) {
 
 先介绍下什么是MeasureSpec？
 
-![](images/.Android基础知识_10_View测量、布局及绘制原理_images/778a457c.png)
+![](images/Android_10_View_images/778a457c.png)
 
 MeasureSpec由两部分组成，一部分是测量模式，另一部分是测量的尺寸大小。
 
@@ -56,7 +56,7 @@ AT_MOST ：对应LayoutParams中的wrap_content。View的大小不能大于父�
 
 这部分比较复杂。以下列图表表示不同的情况：
 
-![](images/.Android基础知识_10_View测量、布局及绘制原理_images/6850cadd.png)
+![](images/Android_10_View_images/6850cadd.png)
 
 **当子View的LayoutParams的布局格式是wrap_content，可以看到子View的大小是父View的剩余尺寸，和设置成match_parent时，子View的大小没有区别。为了显示区别，一般在自定义View时，需要重写onMeasure方法，处理wrap_content时的情况，进行特别指定。**
 
@@ -78,7 +78,7 @@ AT_MOST ：对应LayoutParams中的wrap_content。View的大小不能大于父�
 
 View的测量流程：
 
-![](images/.Android基础知识_10_View测量、布局及绘制原理_images/36ab77fa.png)
+![](images/Android_10_View_images/36ab77fa.png)
 
 ## 三、Layout流程
 
@@ -142,7 +142,7 @@ protected void onLayout(boolean changed, int left, int top, int right, int botto
 
 View的布局流程：
 
-![](images/.Android基础知识_10_View测量、布局及绘制原理_images/f77ed015.png)
+![](images/Android_10_View_images/f77ed015.png)
 
 ## 四、Draw过程
 
@@ -201,7 +201,7 @@ public void draw(Canvas canvas) {
 
 View绘制流程：
 
-![](images/.Android基础知识_10_View测量、布局及绘制原理_images/14207465.png)
+![](images/Android_10_View_images/14207465.png)
 
 ## 五、总结
 

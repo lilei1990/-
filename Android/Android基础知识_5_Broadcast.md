@@ -30,7 +30,7 @@
   2. 消息发布者（广播发布者）
   3. 消息中心（`AMS`，即`Activity Manager Service`）
 
-![](images/.Android基础知识_4_Broadcast_images/0b720f30.png)
+![](images/Android_5_Broadcast_images/0b720f30.png)
 - 原理描述：
 
   1. 广播接收者 通过 `Binder`机制在 `AMS` 注册
@@ -51,7 +51,7 @@
 
 具体使用流程如下：
 
-![](images/.Android基础知识_4_Broadcast_images/165557e3.png)
+![](images/Android_5_Broadcast_images/165557e3.png)
 接下来我将一步步介绍如何使用
 
 > 即上图中的 **开发者手动完成部分**
@@ -174,7 +174,7 @@ protected void onPause() {
 
 #### 4.2.3 两种注册方式的区别
 
-![](images/.Android基础知识_4_Broadcast_images/a038e38e.png)
+![](images/Android_5_Broadcast_images/a038e38e.png)
 ### 4.3 广播发送者向AMS发送广播
 
 #### 4.3.1 广播的发送

@@ -67,7 +67,7 @@ ViewRoot并不属于View树的一份子。从源码实现上来看，它既非Vi
 
 下面结构图可以清晰的揭示四者之间的关系：
 
-![](images/.Android基础知识_9_Window、Activity、DecorView以及ViewRoot之间的关系_images/042fa984.png)
+![](images/Android_9_WindowActivityDecorView_images/042fa984.png)
 
 ## 二、DecorView的创建
 
@@ -356,7 +356,7 @@ public void addView(View view, ViewGroup.LayoutParams params,
 
 看到其中实例化了ViewRootImpl对象，然后调用其setView()方法。其中setView()方法经过一些列折腾，最终调用了performTraversals()方法，**然后依照下图流程层层调用，完成绘制，最终界面才显示出来。**
 
-![](images/.Android基础知识_9_Window、Activity、DecorView以及ViewRoot之间的关系_images/d822a15c.png)
+![](images/Android_9_WindowActivityDecorView_images/d822a15c.png)
 
 其实ViewRootImpl的作用不止如此，还有许多功能，如事件分发。
 
