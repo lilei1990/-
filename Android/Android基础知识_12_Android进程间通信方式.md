@@ -714,7 +714,7 @@ Socket 本身可以传输任意字节流。
 
 **Socket 是连接应用层与传输层之间接口（API）。**
 
-[![网络模型](https://github.com/astaxie/build-web-application-with-golang/raw/master/zh/images/8.1.socket.png?raw=true)](https://github.com/astaxie/build-web-application-with-golang/raw/master/zh/images/8.1.socket.png?raw=true)
+![](images/images/e3194021.png)
 
 只实现 TCP Socket 。
 

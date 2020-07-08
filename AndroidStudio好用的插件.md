@@ -2,8 +2,8 @@
 
 - Markdown Navigator enhanced edition
 
-    ![image_markdown](README_images/image_markdown.png)
+    ![](README_images/image_markdown.png)
 
 - translation
 
-    ![image_translation](README_images/image_translation.png)
+    ![](README_images/image_translation.png)
