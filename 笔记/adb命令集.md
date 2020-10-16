@@ -24,3 +24,9 @@
     -n  Don't resolve names.
     -W  Wide Display.
     -p  Display PID/Program name for sockets.
+    
+# adb查看进程
+adb shell-->ps -A |grep lifecycle
+# adb杀死进程
+adb shell-->am kill com.example.android.codelabs.lifecycle
+
