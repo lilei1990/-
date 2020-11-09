@@ -96,6 +96,7 @@ Repositories :
 >将耗时操作放到 flow { ... } 里面，通过 flowOn(Dispatchers.IO) 切换到 IO 线程，最后通过 emit() 
 方法将数据发送给 ViewModel，接下来我们来看一下如何在 ViewModel 中接受 Flow 发送的数据。
 >
+
 **Kotlin Flow 在 ViewModel 中的使用**
 
 方法一: LifeCycle 2.2.0 之前
