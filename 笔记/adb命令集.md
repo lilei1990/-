@@ -30,3 +30,5 @@ adb shell-->ps -A |grep lifecycle
 # adb杀死进程
 adb shell-->am kill com.example.android.codelabs.lifecycle
 
+# 实时输出logcat日志到指定文件
+adb shell logcat -v time > d:\111.log
