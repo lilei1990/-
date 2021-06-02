@@ -1,4 +1,4 @@
-##DroidPlannerService
+## DroidPlannerService
 
 DroneKit-Android 后台服务实现。
 
@@ -31,7 +31,7 @@ DroneKit-Android 后台服务实现。
       private List<CameraDetail> cachedCameraDetails;
 
 
-####DroneApi registerDroneApi(IApiListener listener, String appId)
+#### DroneApi registerDroneApi(IApiListener listener, String appId)
     /**
       * 为给定应用程序 ID 表示的客户端生成一个无人机 API 实例。
       *
@@ -40,7 +40,7 @@ DroneKit-Android 后台服务实现。
       * @return 一个 IDroneApi 实例
       */
 
-####void releaseDroneApi(String appId)
+#### void releaseDroneApi(String appId)
 
           /**
       *释放附加到给定应用ID的无人机api实例。
@@ -49,7 +49,7 @@ DroneKit-Android 后台服务实现。
       */
 
 
-####DroneManager connectDroneManager(ConnectionParameter connParams, String appId, DroneApi listener) 
+#### DroneManager connectDroneManager(ConnectionParameter connParams, String appId, DroneApi listener) 
 
     /**
     * 使用给定的连接参数与媒介建立连接。
@@ -60,7 +60,7 @@ DroneKit-Android 后台服务实现。
     * @return 一个 DroneManager 实例，它充当连接车辆和监听客户端之间的路由器。
     */
 
-####void disconnectDroneManager(DroneManager droneMgr, DroneApi.ClientInfo clientInfo) 
+#### void disconnectDroneManager(DroneManager droneMgr, DroneApi.ClientInfo clientInfo) 
 
     /**
     *从给定的无人机管理员管理的车辆上断开给定的客户。
@@ -70,7 +70,7 @@ DroneKit-Android 后台服务实现。
     */
 
 
-####synchronized List<CameraDetail> getCameraDetails() 
+#### synchronized List<CameraDetail> getCameraDetails() 
     
     /**
     * 检索应用程序提供的一组相机信息。
@@ -86,17 +86,20 @@ DroneKit-Android 后台服务实现。
 
 
 #### public void onCreate() 
+
     /** 生命周期 **/
 
 #### private void updateForegroundNotification()
-    /** 通知栏显示更新 **/
-####public void onDestroy() 
 
-#### public int onStartCommand(Intent intent, int flags, int startId) 
+    /** 通知栏显示更新 **/
+
+#### public void onDestroy() 
+
+#### public int onStartCommand(Intent intent, int flags, int startId)
+
     /** releaseDroneApi **/
 #### public static void enableDroidPlannerService(Context context, boolean enable)
 
     /**
      * 关闭开启服务 DroidPlannerService 组件
      */
-}
