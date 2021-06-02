@@ -1,4 +1,5 @@
 ##DroidPlannerService
+
 DroneKit-Android 后台服务实现。
 
      //状态栏通知id
@@ -40,6 +41,7 @@ DroneKit-Android 后台服务实现。
       */
 
 ####void releaseDroneApi(String appId)
+
           /**
       *释放附加到给定应用ID的无人机api实例。
       *
@@ -48,6 +50,7 @@ DroneKit-Android 后台服务实现。
 
 
 ####DroneManager connectDroneManager(ConnectionParameter connParams, String appId, DroneApi listener) 
+
     /**
     * 使用给定的连接参数与媒介建立连接。
     *
@@ -58,6 +61,7 @@ DroneKit-Android 后台服务实现。
     */
 
 ####void disconnectDroneManager(DroneManager droneMgr, DroneApi.ClientInfo clientInfo) 
+
     /**
     *从给定的无人机管理员管理的车辆上断开给定的客户。
     *
@@ -76,6 +80,7 @@ DroneKit-Android 后台服务实现。
 
 
 #### public IBinder onBind(Intent intent) 
+
     /**server bind 调用**/
  
 
