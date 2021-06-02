@@ -2,7 +2,7 @@
 
 ## interface IDroneApi 
 用于访问无人机属性的接口
-####Bundle getAttribute(String attributeType);
+#### Bundle getAttribute(String attributeType);
         /**
         * 检索其类型由参数指定的属性。
         * @param attributeType要检索的属性的类型。支持的列表
@@ -10,45 +10,45 @@
         * @return Bundle 对象包含请求的属性。
           */
 
-####void performAction(inout Action action);
+#### void performAction(inout Action action);
               /**
           * 在 api 公开的集合中执行一个操作。
           * @param action 要执行的操作。
           */
   ##/ ***单向方法调用*** /
 
-####oneway void performAsyncAction(in Action action);
+#### oneway void performAsyncAction(in Action action);
           /**
       * 在 api 公开的集合中异步执行一个操作。
       * @param action 要执行的操作。
       */
 
-####oneway void addAttributesObserver(IObserver observer);
+#### oneway void addAttributesObserver(IObserver observer);
       /**
     *注册一个侦听器以接收无人机事件。
     * @paramobserver 要注册的观察者。
       */
 
-####oneway void removeAttributesObserver(IObserver observer);
+#### oneway void removeAttributesObserver(IObserver observer);
         
         /**
         *删除无人机事件监听器。
         * @paramobserver 要移除的观察者。
         */
 
-####oneway void addMavlinkObserver(IMavlinkObserver observer);
+#### oneway void addMavlinkObserver(IMavlinkObserver observer);
           /**
       * 注册一个监听器来接收 mavlink 消息。
       * @paramobserver 要注册的观察者。
       */
 
-####oneway void removeMavlinkObserver(IMavlinkObserver observer);
+#### oneway void removeMavlinkObserver(IMavlinkObserver observer);
           /**
       * 删除一个 mavlink 消息监听器。
       * @paramobserver 要移除的观察者。
       */
 
-####void executeAction(inout Action action, ICommandListener listener);
+#### void executeAction(inout Action action, ICommandListener listener);
           /**
       * 在 api 公开的集合中执行一个操作。
       * @param action 要执行的操作。
@@ -56,7 +56,7 @@
 / ***单向方法调用*** /
 
 
-####oneway void executeAsyncAction(in Action action, ICommandListener listener);
+#### oneway void executeAsyncAction(in Action action, ICommandListener listener);
           /**
       * 在 api 公开的集合中异步执行一个操作。
       * @param action 要执行的操作。
